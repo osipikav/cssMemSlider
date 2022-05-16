@@ -19,7 +19,7 @@
   float: left;
 }
 
-#slides .image {
+#slides .images {
   /* общий размер блока с изображениями*/
   width: 500%;
 }
@@ -36,7 +36,7 @@ article p {
   font-weight: 700;
   font-size: large;
   margin-top: 1rem;
-  padding-right: 20%;
+  /* padding-right: 20%; */
 }
 
 #desktop:checked ~ #slider {
@@ -52,19 +52,19 @@ label {
 }
 
 /*позиция изображения при активации переключателя*/
-#switch1:checked ~ #slides .image {
+#switch1:checked ~ #slides .images {
   margin-left: 0;
 }
-#switch2:checked ~ #slides .image {
+#switch2:checked ~ #slides .images {
   margin-left: -100%;
 }
-#switch3:checked ~ #slides .image {
+#switch3:checked ~ #slides .images {
   margin-left: -200%;
 }
-#switch4:checked ~ #slides .image {
+#switch4:checked ~ #slides .images {
   margin-left: -300%;
 }
-#switch5:checked ~ #slides .image {
+#switch5:checked ~ #slides .images {
   margin-left: -400%;
 }
 
@@ -79,7 +79,10 @@ label {
 }
 
 #control {
-  margin: 5% 1% 5% 65%;
+  margin: 5% auto; /*
+   @media screen and (max-width: 400px) {
+    background: black;
+  }*/
 }
 
 #control label:hover {
@@ -94,6 +97,6 @@ label {
   background: #18a3dd;
 }
 
-#slides .image {
+#slides .images {
   transition: ease-in-out 0.8s;
 }
