@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#slider {
+  position: relative;
+  text-align: center;
+  padding: 5%;
+}
+
+#slider {
+  margin: 0 auto;
+}
+
+#slides article {
+  width: 20%;
+  float: left;
+}
+
+#slides .image {
+  /* общий размер блока с изображениями*/
+  width: 500%;
+}
+
+#overflow {
+  overflow: hidden;
+}
+
+article img {
+  max-width: 100%;
+}
+article p {
+  font-family: monospace;
+  font-weight: 700;
+  font-size: large;
+  margin-top: 1rem;
+  padding-right: 20%;
+}
+
+#desktop:checked ~ #slider {
+  max-width: 960px;
+}
+
+label {
+  cursor: pointer;
+}
+
+.wrapper input {
+  display: none;
+}
+
+/*позиция изображения при активации переключателя*/
+#switch1:checked ~ #slides .image {
+  margin-left: 0;
+}
+#switch2:checked ~ #slides .image {
+  margin-left: -100%;
+}
+#switch3:checked ~ #slides .image {
+  margin-left: -200%;
+}
+#switch4:checked ~ #slides .image {
+  margin-left: -300%;
+}
+#switch5:checked ~ #slides .image {
+  margin-left: -400%;
+}
+
+#control label {
+  border-radius: 1rem;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background: #bbb;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+#control {
+  margin: 5% 1% 5% 65%;
+}
+
+#control label:hover {
+  background: #76c8ff;
+}
+
+/*активация чекбокса*/
+#switch1:checked ~ #control label:nth-child(1),
+#switch2:checked ~ #control label:nth-child(2),
+#switch3:checked ~ #control label:nth-child(3),
+#switch4:checked ~ #control label:nth-child(4) {
+  background: #18a3dd;
+}
+
+#slides .image {
+  transition: ease-in-out 0.8s;
+}
