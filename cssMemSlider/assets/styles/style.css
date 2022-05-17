@@ -8,10 +8,9 @@
   position: relative;
   text-align: center;
   padding: 5%;
-}
-
-#slider {
   margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
 }
 
 #slides article {
@@ -20,7 +19,6 @@
 }
 
 #slides .images {
-  /* общий размер блока с изображениями*/
   width: 500%;
 }
 
@@ -29,18 +27,25 @@
 }
 
 article img {
-  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  height: auto;
+  border-radius: 1rem;
 }
-article p {
+
+.footer .text {
+  margin: auto 0;
+}
+
+.footer .p {
   font-family: monospace;
   font-weight: 700;
-  font-size: large;
-  margin-top: 1rem;
-  /* padding-right: 20%; */
+  font-size: 1rem;
+  display: none;
 }
 
 #desktop:checked ~ #slider {
-  max-width: 960px;
+  max-width: 1280px;
 }
 
 label {
@@ -51,7 +56,6 @@ label {
   display: none;
 }
 
-/*позиция изображения при активации переключателя*/
 #switch1:checked ~ #slides .images {
   margin-left: 0;
 }
@@ -68,6 +72,12 @@ label {
   margin-left: -400%;
 }
 
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 #control label {
   border-radius: 1rem;
   display: inline-block;
@@ -79,22 +89,30 @@ label {
 }
 
 #control {
-  margin: 5% auto; /*
-   @media screen and (max-width: 400px) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* @media screen and (max-width: 400px) {
     background: black;
-  }*/
+  } */
 }
 
 #control label:hover {
-  background: #76c8ff;
+  background: #3fa2e3;
 }
 
-/*активация чекбокса*/
-#switch1:checked ~ #control label:nth-child(1),
-#switch2:checked ~ #control label:nth-child(2),
-#switch3:checked ~ #control label:nth-child(3),
-#switch4:checked ~ #control label:nth-child(4) {
-  background: #18a3dd;
+#switch1:checked ~ .footer #control label:nth-child(1),
+#switch2:checked ~ .footer #control label:nth-child(2),
+#switch3:checked ~ .footer #control label:nth-child(3),
+#switch4:checked ~ .footer #control label:nth-child(4) {
+  background: #196ce1;
+}
+
+#switch1:checked ~ .footer .text p:nth-child(1),
+#switch2:checked ~ .footer .text p:nth-child(2),
+#switch3:checked ~ .footer .text p:nth-child(3),
+#switch4:checked ~ .footer .text p:nth-child(4) {
+  display: block;
 }
 
 #slides .images {
