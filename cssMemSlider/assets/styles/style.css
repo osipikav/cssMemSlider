@@ -37,11 +37,12 @@ article img {
   margin: auto 0;
   color: #fff;
   margin-top: 0;
+  text-align: start;
 }
 @media screen and (min-width: 767px) {
   .footer .text {
     width: 30rem;
-    text-align: start;
+
     margin-top: 0.5rem;
   }
 }
