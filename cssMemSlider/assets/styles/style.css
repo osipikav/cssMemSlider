@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(31, 31, 31);
+}
+
+#slider {
+  position: relative;
+  text-align: center;
+  padding: 5%;
+
+  width: fit-content;
+}
+
+#slides article {
+  width: 20%;
+  float: left;
+}
+
+#slides .images {
+  width: 500%;
+}
+
+#overflow {
+  overflow: hidden;
+}
+
+article img {
+  max-width: 100%;
+  object-fit: cover;
+  max-height: 95vh;
+  border-radius: 1rem;
+}
+
+.footer .text {
+  margin: auto 0;
+  color: #fff;
+  margin-top: 0;
+  text-align: start;
+}
+@media screen and (min-width: 767px) {
+  .footer .text {
+    width: 30rem;
+
+    margin-top: 0.5rem;
+  }
+}
+
+.footer p {
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 1rem;
+  display: none;
+  padding: 1rem 0;
+}
+
+.wrapper input {
+  display: none;
+}
+
+#switch1:checked ~ #slides .images {
+  margin-left: 0;
+}
+#switch2:checked ~ #slides .images {
+  margin-left: -100%;
+}
+#switch3:checked ~ #slides .images {
+  margin-left: -200%;
+}
+#switch4:checked ~ #slides .images {
+  margin-left: -300%;
+}
+#switch5:checked ~ #slides .images {
+  margin-left: -400%;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 767px) {
+  .footer {
+    flex-direction: column-reverse;
+  }
+}
+
+#control label {
+  border-radius: 1rem;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background: #bbb;
+  margin: 0.2rem;
+  padding: 0.5rem;
+  border: solid 0.5rem rgb(31, 31, 31);
+  cursor: pointer;
+}
+
+#control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+#control label:hover {
+  background: #3fa2e3;
+}
+
+#switch1:checked ~ .footer #control label:nth-child(1),
+#switch2:checked ~ .footer #control label:nth-child(2),
+#switch3:checked ~ .footer #control label:nth-child(3),
+#switch4:checked ~ .footer #control label:nth-child(4) {
+  background: #196ce1;
+}
+
+#switch1:checked ~ .footer .text p:nth-child(1),
+#switch2:checked ~ .footer .text p:nth-child(2),
+#switch3:checked ~ .footer .text p:nth-child(3),
+#switch4:checked ~ .footer .text p:nth-child(4) {
+  display: block;
+  animation: blur 0.75s ease-out;
+}
+
+@keyframes blur {
+  from {
+    text-shadow: 0px 0px 10px #fff, 0px 0px 10px #fff, 0px 0px 25px #fff,
+      0px 0px 25px #fff, 0px 0px 25px #fff, 0px 0px 25px #fff, 0px 0px 25px #fff,
+      0px 0px 25px #fff, 0px 0px 50px #fff, 0px 0px 50px #fff,
+      0px 0px 50px #7b96b8, 0px 0px 150px #7b96b8, 0px 10px 100px #7b96b8,
+      0px 10px 100px #7b96b8, 0px 10px 100px #7b96b8, 0px 10px 100px #7b96b8,
+      0px -10px 100px #7b96b8, 0px -10px 100px #7b96b8;
+  }
+}
+
+#slides .images {
+  transition: ease-in-out 0.8s;
+}
